@@ -15,7 +15,7 @@ class TweeterStreamListener(tweepy.StreamListener):
         print("Hello : ",api)
         super(tweepy.StreamListener, self).__init__()
         print('HELLO 1')
-        client = KafkaClient("172.31.19.85:9092")
+        client = KafkaClient("13.127.78.5:9092")
         print('Hello 2')
         self.producer = SimpleProducer(client, async = True,
                           batch_send_every_n = 1000,

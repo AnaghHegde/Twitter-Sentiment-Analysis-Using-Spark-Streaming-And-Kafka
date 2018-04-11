@@ -24,6 +24,7 @@ class TweeterStreamListener(tweepy.StreamListener):
         msg =  status.text.encode('utf-8')
         try:
             self.producer.send_messages(b'twitterstream', msg)
+            print(msg)
         except Exception as e:
             print(e)
             return False

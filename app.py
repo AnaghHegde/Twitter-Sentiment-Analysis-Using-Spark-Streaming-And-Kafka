@@ -51,7 +51,9 @@ if __name__ == '__main__':
     consumer_secret = config['DEFAULT']['consumerSecret']
     access_key = config['DEFAULT']['accessToken']
     access_secret = config['DEFAULT']['accessTokenSecret']
-
+    
+    print(access_key,access_secret)
+    
     # Create Auth object
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)

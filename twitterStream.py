@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    conf = SparkConf().setMaster("local[2]").setAppName("Streamer")
+    conf = SparkConf().setAppName("Streamer")
     sc = SparkContext(conf=conf)
 
     # Creating a streaming context with batch interval of 10 sec

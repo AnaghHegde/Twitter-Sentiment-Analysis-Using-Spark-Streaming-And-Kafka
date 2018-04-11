@@ -80,7 +80,7 @@ def sendRecord(record):
 
 def stream(ssc, pwords, nwords, duration):
     kstream = KafkaUtils.createDirectStream(
-    ssc, topics = ['twitterstream'], kafkaParams = {"metadata.broker.list": 'localhost:9092'})
+    ssc, topics = ['twitterstream'], kafkaParams = {"metadata.broker.list": '172.31.19.85:9092'})
     tweets = kstream.map(lambda x: x[1].encode("ascii", "ignore"))
 
     # Each element of tweets will be the text of a tweet.

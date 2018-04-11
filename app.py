@@ -12,8 +12,11 @@ class TweeterStreamListener(tweepy.StreamListener):
 
     def __init__(self, api):
         self.api = api
+        print("Hello : ",api)
         super(tweepy.StreamListener, self).__init__()
+        print('HELLO 1')
         client = KafkaClient("172.31.19.85:9092")
+        print('Hello 2')
         self.producer = SimpleProducer(client, async = True,
                           batch_send_every_n = 1000,
                           batch_send_every_t = 10)
@@ -31,8 +34,9 @@ class TweeterStreamListener(tweepy.StreamListener):
         return True
 
     def on_error(self, status_code):
-        print("Error received in kafka producer")
-        print(status_code)
+        
+        print("Error received in kafka producer ",status_code)
+        
         return True # Don't kill the stream
 
     def on_timeout(self):

@@ -11,7 +11,7 @@ def main():
     sc = SparkContext(conf=conf)
 
     # Creating a streaming context with batch interval of 10 sec
-    ssc = StreamingContext(sc, 10)
+    ssc = StreamingContext(sc, 1)
     ssc.checkpoint("checkpoint")
     pwords = load_wordlist("./Dataset/positive.txt")
     nwords = load_wordlist("./Dataset/negative.txt")
